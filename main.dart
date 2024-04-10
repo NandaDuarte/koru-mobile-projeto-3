@@ -37,7 +37,7 @@ main() {
   // pularLinha();
   // Declare aqui alguns objetos do tipo Produto...
   // Exemplo: Produto produtoA = Produto("Colônia Floratta Flores Secretas 75ml", 104.90, 3);
-  Produto parfumLily = Produto("parfumLily", 291.51, 2);
+  Produto parfumLily = Produto("ParfumLily", 291.51, 2);
   /* Testes da classe Produto */
   Produto bleu = Produto("Ultra Bleu Desodorante Colônia 100ml", 179.90, 1);
   pularLinha();
@@ -125,6 +125,9 @@ main() {
   pularLinha();
   Cliente cliente4 = Cliente(
       'Vinicius', '3322578212', DateTime.parse('2024-01-16'), Genero.masculino);
-  cliente4.adicionarDinheiro(350.00);
+  cliente4.adicionarDinheiro(3050.00);
+  cliente4.comprarProduto(bleu, func1);
   cliente4.comprarProduto(verano, func1);
+  cliente4.comprarProduto(parfumLily, func1);
+  cliente4.verProdutosComprados();
 }

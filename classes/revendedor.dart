@@ -33,8 +33,7 @@ class Revendedor extends Pessoa {
 ● Gênero neutro: “Pessoa revendedora Cris diz: Temos
 promoções”.*/
 
-  void venderProduto(Produto produto) {
-    produto.realizarVenda();
-    this.produtosVendidos.add(produto);
-  }
+    void venderProduto(Produto produto) {
+      produto.realizarVenda();
+      this.produtosVendidos.add(produto);}
 }
