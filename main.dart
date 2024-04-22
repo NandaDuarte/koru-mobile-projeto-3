@@ -1,6 +1,5 @@
 // Importações dos arquivos que serão utilizados
 
-
 import 'classes/cliente.dart';
 import 'classes/enums.dart';
 import 'classes/pessoa.dart';
@@ -74,11 +73,17 @@ main() {
   // Declare aqui alguns objetos do tipo Pessoa...
   // Exemplo: Pessoa pessoaA = Pessoa('Maria', '12345678900', 1994);
   Pessoa pessoa1 = Pessoa(
-      "maria", "452464545452", DateTime.parse("1980-04-12"), Genero.feminino);
+      nome: "maria",
+      cpf: "452464545452",
+      dataDeNascimento: DateTime.parse("1980-04-12"),
+      generos: Genero.feminino);
   pularLinha();
 
   Pessoa pessoa2 = Pessoa(
-      "jose", "121212121212", DateTime.parse("2012-12-12"), Genero.masculino);
+      nome: "jose",
+      cpf: "121212121212",
+      dataDeNascimento: DateTime.parse("2012-12-12"),
+      generos: Genero.masculino);
 
   /* Testes da classe Pessoa */
 
@@ -98,9 +103,15 @@ main() {
   pessoa2.maioridade();
   pularLinha();
   Cliente cliente1 = Cliente(
-      "rosa", "12121212121", DateTime.parse("1990-10-20"), Genero.feminino);
-  Cliente cliente2 = Cliente("francisco", "34525254689",
-      DateTime.parse("1960-12-25"), Genero.masculino);
+      nome: "rosa",
+      cpf: "12121212121",
+      dataDeNascimento: DateTime.parse("1990-10-20"),
+      generos: Genero.feminino);
+  Cliente cliente2 = Cliente(
+      nome: "francisco",
+      cpf: "34525254689",
+      dataDeNascimento: DateTime.parse("1960-12-25"),
+      generos: Genero.masculino);
   pularLinha();
   cliente1.falar("Quero ganhar o  Balm Hidratante Labial Nativa Spa Lilac");
   pularLinha();
@@ -108,7 +119,10 @@ main() {
 
   pularLinha();
   Cliente cliente3 = Cliente(
-      'João', '5362578725', DateTime.parse('2024-03-21'), Genero.masculino);
+      nome: 'João',
+      cpf: '5362578725',
+      dataDeNascimento: DateTime.parse('2024-03-21'),
+      generos: Genero.masculino);
   cliente3.adicionarDinheiro(250.00);
   cliente3.adicionarDinheiro(50.00);
 
@@ -126,26 +140,34 @@ main() {
   print("Lucro : ${func2.calcularLucro().toStringAsFixed(2)}");
   pularLinha();
   Cliente cliente4 = Cliente(
-      'Vinicius', '3322578212', DateTime.parse('2024-01-16'), Genero.masculino);
+      nome: 'Vinicius',
+      cpf: '3322578212',
+      dataDeNascimento: DateTime.parse('2024-01-16'),
+      generos: Genero.masculino);
   cliente4.adicionarDinheiro(3500.00);
   cliente4.comprarProduto(verano, func1);
   cliente4.comprarProduto(bleu, func1);
   cliente4.comprarProduto(parfumLily, func1);
   cliente4.comprarProduto(verano, func1);
-    cliente4.comprarProduto(bleu,func1);
-  
-  cliente3.comprarProduto(verano, func1);
+  cliente4.comprarProduto(bleu, func1);
 
+  cliente3.comprarProduto(verano, func1);
 
   cliente3.verProdutosComprados();
   cliente4.verProdutosComprados();
 
-  Cliente cliente5 = new Cliente("Adevalter", "123654789-11",
-      DateTime.parse("1974-08-22"), Genero.masculino);
+  Cliente cliente5 = new Cliente(
+      nome: "Adevalter",
+      cpf: "123654789-11",
+      dataDeNascimento: DateTime.parse("1974-08-22"),
+      generos: Genero.masculino);
   cliente5.verProdutosComprados();
 
-  Cliente cliente6 = new Cliente("Adevalter", "123654789-11",
-      DateTime.parse("1974-08-22"), Genero.masculino);
+  Cliente cliente6 = new Cliente(
+      nome: "Adevalter",
+      cpf: "123654789-11",
+      dataDeNascimento: DateTime.parse("1974-08-22"),
+      generos: Genero.masculino);
   cliente6.adicionarDinheiro(1000.00);
   cliente6.comprarProduto(verano, func1);
   cliente6.comprarProduto(bleu, func1);
@@ -159,5 +181,3 @@ main() {
   func1.verResumo();
   func2.verResumo();
 }
-
-

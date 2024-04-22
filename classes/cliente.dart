@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'pessoa.dart';
 import 'produto.dart';
 import 'revendedor.dart';
@@ -6,8 +8,12 @@ class Cliente extends Pessoa {
   double dinheiro;
   List<Produto> produtoComprados = [];
 
-  Cliente(super.nome, super.cpf, super.dataDeNascimento, super.generos,
-      [this.dinheiro = 0.0]);
+  Cliente(
+      {required super.nome,
+      required super.cpf,
+      required super.dataDeNascimento,
+      required super.generos,
+      this.dinheiro = 0});
 
   @override
   void falar(String fala) {
@@ -85,6 +91,7 @@ class Cliente extends Pessoa {
       return 0.0;
     }
   }
-    void verResumo() => print(
+
+  void verResumo() => print(
       "O total gasto por ${super.nome} foi de ${_calcularTotalGasto().toStringAsFixed(2)} reais e a média de valor dos produtos comprados é ${_calcularMediaProdutosComprados().toStringAsFixed(2)} reais ");
 }
