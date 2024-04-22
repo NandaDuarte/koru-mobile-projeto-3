@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'pessoa.dart';
 import 'produto.dart';
 import 'revendedor.dart';

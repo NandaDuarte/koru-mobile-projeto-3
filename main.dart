@@ -182,7 +182,7 @@ main() {
       cpf: "123654789-11",
       dataDeNascimento: DateTime.parse("1974-08-22"),
       generos: Genero.masculino);
-  cliente6.adicionarDinheiro(1000.00);
+  cliente6.adicionarDinheiro(1400.00);
   cliente6.comprarProduto(verano, func1);
   cliente6.comprarProduto(bleu, func1);
   cliente6.comprarProduto(parfumLily, func1);
@@ -194,4 +194,7 @@ main() {
   //resumo de vendas revendedor:
   func1.verResumo();
   func2.verResumo();
+
+  Produto parf = Produto(nome: "parfumLily", valor: 291.51, qtdEmEstoque: 0);
+  cliente6.comprarProduto(parf, func1);
 }
