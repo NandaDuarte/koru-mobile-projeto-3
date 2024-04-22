@@ -37,12 +37,18 @@ main() {
   // pularLinha();
   // Declare aqui alguns objetos do tipo Produto...
   // Exemplo: Produto produtoA = Produto("Colônia Floratta Flores Secretas 75ml", 104.90, 3);
-  Produto parfumLily = Produto("parfumLily", 291.51, 20);
+  Produto parfumLily =
+      Produto(nome: "parfumLily", valor: 291.51, qtdEmEstoque: 20);
   /* Testes da classe Produto */
-  Produto bleu = Produto("Ultra Bleu Desodorante Colônia 100ml", 179.90, 10);
+  Produto bleu = Produto(
+      nome: "Ultra Bleu Desodorante Colônia 100ml",
+      valor: 179.90,
+      qtdEmEstoque: 10);
   pularLinha();
-  Produto verano =
-      Produto("Verano en Firenze Eau de Parfum Floral Frutal75 ml", 164.00, 30);
+  Produto verano = Produto(
+      nome: "Verano en Firenze Eau de Parfum Floral Frutal75 ml",
+      valor: 164.00,
+      qtdEmEstoque: 30);
   // Teste o método realizarVenda algumas vezes...
   // Exemplo: produtoA.realizarVenda();
   // Saída esperada 1: Compra de um produto Colônia Floratta Flores Secretas 75ml realizada com sucesso!
