@@ -40,12 +40,17 @@ class Cliente extends Pessoa {
         'Agora a pessoa ${super.nome} possui: ${this.dinheiro.toStringAsFixed(2)} reais.');
   }
 
+  void consultarTotalPontos(){
+    
+  }
+
   void comprarProduto(Produto produto, Revendedor revendedor) {
     if (dinheiro >= produto.valor) {
       try {
         revendedor.venderProduto(produto);
         this.dinheiro -= produto.valor;
         produtoComprados.add(produto);
+        this.pontos++;
         print(
             '${super.nome} comprou o produto ${produto.nome} por ${produto.valor.toStringAsFixed(2)} reais.');
       } catch (error) {
