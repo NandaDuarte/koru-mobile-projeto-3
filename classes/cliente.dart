@@ -40,8 +40,8 @@ class Cliente extends Pessoa {
         'Agora a pessoa ${super.nome} possui: ${this.dinheiro.toStringAsFixed(2)} reais.');
   }
 
-  void consultarTotalPontos() {
-    //teste
+  void consultarTotalPontos(){
+    
   }
 
   void comprarProduto(Produto produto, Revendedor revendedor) {
