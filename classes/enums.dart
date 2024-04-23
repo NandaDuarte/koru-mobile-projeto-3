@@ -4,3 +4,12 @@ enum Genero{
   outro;
 }
 
+
+enum Humor{
+  feliz,
+  triste,
+  ansioso,
+  cansado;
+
+}
+

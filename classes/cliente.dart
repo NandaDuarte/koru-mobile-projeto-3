@@ -9,6 +9,7 @@ class Cliente extends Pessoa {
   List<Brinde> brinds = [];
   int pontos = 0;
 
+
   Cliente(
       {required super.nome,
       required super.cpf,

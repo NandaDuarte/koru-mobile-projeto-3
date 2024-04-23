@@ -7,12 +7,14 @@ class Revendedor extends Pessoa {
   List<Produto> produtosVendidos = [];
   double porcentagemLucro = 0.3;
 
+
   Revendedor(
       {required super.nome,
       required super.cpf,
       required super.dataDeNascimento,
       required super.generos,
       required this.matricula});
+
 
   @override
   void falar(String fala) {

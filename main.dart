@@ -80,6 +80,7 @@ main() {
   // Declare aqui alguns objetos do tipo Pessoa...
   // Exemplo: Pessoa pessoaA = Pessoa('Maria', '12345678900', 1994);
   Pessoa pessoa1 = Pessoa(
+
       nome: "maria",
       cpf: "452464545452",
       dataDeNascimento: DateTime.parse("1980-04-12"),
@@ -91,6 +92,7 @@ main() {
       cpf: "121212121212",
       dataDeNascimento: DateTime.parse("2012-12-12"),
       generos: Genero.masculino);
+
 
   /* Testes da classe Pessoa */
 
@@ -119,6 +121,7 @@ main() {
       cpf: "34525254689",
       dataDeNascimento: DateTime.parse("1960-12-25"),
       generos: Genero.masculino);
+
   pularLinha();
   cliente1.falar("Quero ganhar o  Balm Hidratante Labial Nativa Spa Lilac");
   pularLinha();
@@ -130,10 +133,12 @@ main() {
       cpf: '5362578725',
       dataDeNascimento: DateTime.parse('2024-03-21'),
       generos: Genero.masculino);
+
   cliente3.adicionarDinheiro(250.00);
   cliente3.adicionarDinheiro(50.00);
 
   /* ------------------------------------------ */
+
 
   Revendedor func1 = Revendedor(
       nome: "Marcelo",
@@ -149,6 +154,7 @@ main() {
       dataDeNascimento: DateTime.parse("1980-05-15"),
       generos: Genero.feminino,
       matricula: "10420");
+
   func2.falar(
       "Olá bom dia tuo bem! me chamo Antonela e irei aprensentar nosso catálago");
   print("Lucro : ${func1.calcularLucro().toStringAsFixed(2)}");
@@ -159,6 +165,7 @@ main() {
       cpf: '3322578212',
       dataDeNascimento: DateTime.parse('2024-01-16'),
       generos: Genero.masculino);
+
   cliente4.adicionarDinheiro(3500.00);
   cliente4.comprarProduto(verano, func1);
   cliente4.comprarProduto(bleu, func1);
@@ -170,6 +177,7 @@ main() {
 
   cliente3.verProdutosComprados();
   cliente4.verProdutosComprados();
+
 
   Cliente cliente5 = new Cliente(
       nome: "Adevalter",
@@ -184,6 +192,7 @@ main() {
       dataDeNascimento: DateTime.parse("1974-08-22"),
       generos: Genero.masculino);
   cliente6.adicionarDinheiro(1500.00);
+
   cliente6.comprarProduto(verano, func1);
   cliente6.comprarProduto(bleu, func1);
   cliente6.comprarProduto(parfumLily, func1);
@@ -195,6 +204,20 @@ main() {
   //resumo de vendas revendedor:
   func1.verResumo();
   func2.verResumo();
+
+
+  // termometro do humor desafio 2
+  func1.termometroDoHumor(func1.humor);
+  func2.termometroDoHumor(func2.humor);
+  cliente1.termometroDoHumor(cliente1.humor);
+  cliente2.termometroDoHumor(cliente2.humor);
+  cliente3.termometroDoHumor(cliente3.humor);
+  cliente4.termometroDoHumor(cliente4.humor);
+  cliente5.termometroDoHumor(cliente5.humor);
+  cliente6.termometroDoHumor(cliente6.humor);
+}
+
+
 
   Brinde perfume =
       Brinde(nome: 'florata', pontosNecessarios: 20, qntEmEstoque: 10);
