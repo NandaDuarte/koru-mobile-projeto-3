@@ -3,3 +3,11 @@ enum Genero{
   masculino,
   outro;
 }
+
+enum Humor{
+  feliz,
+  triste,
+  ansioso,
+  cansado;
+
+}

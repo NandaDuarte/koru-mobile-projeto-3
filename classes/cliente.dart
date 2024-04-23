@@ -6,7 +6,7 @@ class Cliente extends Pessoa {
   double dinheiro;
   List<Produto> produtoComprados = [];
 
-  Cliente(super.nome, super.cpf, super.dataDeNascimento, super.generos,
+  Cliente(super.nome, super.cpf, super.dataDeNascimento, super.generos,super.humor,
       [this.dinheiro = 0.0]);
 
   @override

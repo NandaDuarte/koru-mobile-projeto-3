@@ -74,11 +74,11 @@ main() {
   // Declare aqui alguns objetos do tipo Pessoa...
   // Exemplo: Pessoa pessoaA = Pessoa('Maria', '12345678900', 1994);
   Pessoa pessoa1 = Pessoa(
-      "maria", "452464545452", DateTime.parse("1980-04-12"), Genero.feminino);
+      "maria", "452464545452", DateTime.parse("1980-04-12"), Genero.feminino, Humor.cansado);
   pularLinha();
 
   Pessoa pessoa2 = Pessoa(
-      "jose", "121212121212", DateTime.parse("2012-12-12"), Genero.masculino);
+      "jose", "121212121212", DateTime.parse("2012-12-12"), Genero.masculino, Humor.feliz);
 
   /* Testes da classe Pessoa */
 
@@ -98,9 +98,9 @@ main() {
   pessoa2.maioridade();
   pularLinha();
   Cliente cliente1 = Cliente(
-      "rosa", "12121212121", DateTime.parse("1990-10-20"), Genero.feminino);
+      "rosa", "12121212121", DateTime.parse("1990-10-20"), Genero.feminino, Humor.ansioso);
   Cliente cliente2 = Cliente("francisco", "34525254689",
-      DateTime.parse("1960-12-25"), Genero.masculino);
+      DateTime.parse("1960-12-25"), Genero.masculino, Humor.cansado);
   pularLinha();
   cliente1.falar("Quero ganhar o  Balm Hidratante Labial Nativa Spa Lilac");
   pularLinha();
@@ -108,25 +108,25 @@ main() {
 
   pularLinha();
   Cliente cliente3 = Cliente(
-      'João', '5362578725', DateTime.parse('2024-03-21'), Genero.masculino);
+      'João', '5362578725', DateTime.parse('2024-03-21'), Genero.masculino,Humor.ansioso);
   cliente3.adicionarDinheiro(250.00);
   cliente3.adicionarDinheiro(50.00);
 
   /* ------------------------------------------ */
 
   Revendedor func1 = Revendedor("Marcelo", "12345179068",
-      DateTime.parse("1950-01-02"), Genero.masculino, "101220");
+      DateTime.parse("1950-01-02"), Genero.masculino,Humor.feliz, "101220");
   func1.falar(
       "Olá boa tarde, tudo bem? já conhece nossos produtos? temos varias fragrâncias.");
   Revendedor func2 = Revendedor("Antonela", "02131586547",
-      DateTime.parse("1980-05-15"), Genero.feminino, "10420");
+      DateTime.parse("1980-05-15"), Genero.feminino,Humor.cansado, "10420");
   func2.falar(
       "Olá bom dia tuo bem! me chamo Antonela e irei aprensentar nosso catálago");
   print("Lucro : ${func1.calcularLucro().toStringAsFixed(2)}");
   print("Lucro : ${func2.calcularLucro().toStringAsFixed(2)}");
   pularLinha();
   Cliente cliente4 = Cliente(
-      'Vinicius', '3322578212', DateTime.parse('2024-01-16'), Genero.masculino);
+      'Vinicius', '3322578212', DateTime.parse('2024-01-16'), Genero.masculino,Humor.triste);
   cliente4.adicionarDinheiro(3500.00);
   cliente4.comprarProduto(verano, func1);
   cliente4.comprarProduto(bleu, func1);
@@ -141,11 +141,11 @@ main() {
   cliente4.verProdutosComprados();
 
   Cliente cliente5 = new Cliente("Adevalter", "123654789-11",
-      DateTime.parse("1974-08-22"), Genero.masculino);
+      DateTime.parse("1974-08-22"), Genero.masculino,Humor.feliz);
   cliente5.verProdutosComprados();
 
   Cliente cliente6 = new Cliente("Adevalter", "123654789-11",
-      DateTime.parse("1974-08-22"), Genero.masculino);
+      DateTime.parse("1974-08-22"), Genero.masculino,Humor.ansioso);
   cliente6.adicionarDinheiro(1000.00);
   cliente6.comprarProduto(verano, func1);
   cliente6.comprarProduto(bleu, func1);
@@ -158,6 +158,15 @@ main() {
   //resumo de vendas revendedor:
   func1.verResumo();
   func2.verResumo();
+  // termometro do humor desafio 2
+  func1.termometroDoHumor(func1.humor);
+  func2.termometroDoHumor(func2.humor);
+  cliente1.termometroDoHumor(cliente1.humor);
+  cliente2.termometroDoHumor(cliente2.humor);
+  cliente3.termometroDoHumor(cliente3.humor);
+  cliente4.termometroDoHumor(cliente4.humor);
+  cliente5.termometroDoHumor(cliente5.humor);
+  cliente6.termometroDoHumor(cliente6.humor);
 }
 
 
