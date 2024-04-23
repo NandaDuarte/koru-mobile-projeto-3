@@ -8,12 +8,12 @@ class Pessoa {
   Genero generos;
   Humor humor;
 
-
   Pessoa(
       {required this.nome,
       required this.cpf,
       required this.dataDeNascimento,
-      required this.generos}) {
+      required this.generos,
+      required this.humor}) {
     _calcularIdade();
   }
 
@@ -39,23 +39,24 @@ class Pessoa {
       print("${this.nome} tem ${this.idade}, portanto é menor de idade");
     }
   }
-  void termometroDoHumor(Humor humor){
-    switch(humor){
+
+  void termometroDoHumor(Humor humor) {
+    switch (humor) {
       case Humor.feliz:
-      print(" Que bom que esta feliz hoje ${this.nome}");
-      break;
+        print(" Que bom que esta feliz hoje ${this.nome}");
+        break;
       case Humor.triste:
-      print("Porque está triste ${this.nome}?");
-      break;
+        print("Porque está triste ${this.nome}?");
+        break;
       case Humor.ansioso:
-      print("${this.nome} você está muito ansioso(a)!");
-      break;
+        print("${this.nome} você está muito ansioso(a)!");
+        break;
       case Humor.cansado:
-      print("${this.nome} você parece estar cansado(a) hoje.");
-      break;
+        print("${this.nome} você parece estar cansado(a) hoje.");
+        break;
       default:
-      print("${this.nome} não foi reconhecido");
-      break;
+        print("${this.nome} não foi reconhecido");
+        break;
     }
   }
 }

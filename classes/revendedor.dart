@@ -7,14 +7,13 @@ class Revendedor extends Pessoa {
   List<Produto> produtosVendidos = [];
   double porcentagemLucro = 0.3;
 
-
   Revendedor(
       {required super.nome,
       required super.cpf,
       required super.dataDeNascimento,
       required super.generos,
+      required super.humor,
       required this.matricula});
-
 
   @override
   void falar(String fala) {
@@ -44,7 +43,7 @@ promoções”.*/
       produto.realizarVenda();
       this.produtosVendidos.add(produto);
     } catch (e) {
-      throw("Saldo Insuficiente");
+      throw ("Saldo Insuficiente");
     }
   }
 
