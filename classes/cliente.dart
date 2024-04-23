@@ -6,7 +6,7 @@ import 'revendedor.dart';
 class Cliente extends Pessoa {
   double dinheiro;
   List<Produto> produtoComprados = [];
-  List<Brinde> brinds = [];
+  List<Brinde> brindes = [];
   int pontos = 0;
 
   Cliente(
@@ -41,9 +41,8 @@ class Cliente extends Pessoa {
         'Agora a pessoa ${super.nome} possui: ${this.dinheiro.toStringAsFixed(2)} reais.');
   }
 
-  void consultarTotalPontos() {
-    //implementar
-  }
+  void consultarTotalPontos() =>
+      print("${this.nome} possui ${this.pontos} pontos");
 
   void comprarProduto(Produto produto, Revendedor revendedor) {
     if (dinheiro >= produto.valor) {
@@ -101,4 +100,25 @@ class Cliente extends Pessoa {
 
   void verResumo() => print(
       "O total gasto por ${super.nome} foi de ${_calcularTotalGasto().toStringAsFixed(2)} reais e a média de valor dos produtos comprados é ${_calcularMediaProdutosComprados().toStringAsFixed(2)} reais ");
+
+  void ordenarBrindes() {
+    brindes.sort((a, b) => a.nome.compareTo(b.nome));
+    brindes.forEach((brinde) {
+      print("${brinde.nome}");
+    });
+  }
+
+  void trocarPontosProBrinde(Brinde brinde) {
+    try {
+      if (this.pontos >= brinde.pontosNecessarios) {
+        brinde.realizarTroca();
+        brindes.add(brinde);
+      } else {
+        print(
+            "${this.nome} não possui pontos suficientes para trocar pelo brinde ${brinde.nome}");
+      }
+    } on FormatException catch (e) {
+      print(e.message);
+    }
+  }
 }

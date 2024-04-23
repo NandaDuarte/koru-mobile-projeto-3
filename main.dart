@@ -1,4 +1,5 @@
 // Importações dos arquivos que serão utilizados
+
 import 'classes/brinde.dart';
 import 'classes/cliente.dart';
 import 'classes/enums.dart';
@@ -222,14 +223,6 @@ main() {
   cliente5.termometroDoHumor(cliente5.humor);
   cliente6.termometroDoHumor(cliente6.humor);
 
-  Brinde brinde2 =
-      new Brinde(nome: "perfume", pontosNecessarios: 10, qntEmEstoque: 5);
-
-  brinde2.consultarPontosNecessarios();
-  brinde2.realizarTroca();
-  brinde2.realizarTroca();
-  print(brinde2.consultaQtdeEmEstoque());
-
   Produto bleus = Produto(
       nome: "Ultra Bleu Desodorante Colônia 100ml",
       valor: 179.90,
@@ -245,4 +238,12 @@ main() {
   cliente7.adicionarDinheiro(500);
   cliente7.comprarProduto(bleus, func1);
   print(cliente7.dinheiro);
+
+  Brinde brinde2 = new Brinde(nome: "perfume", pontosNecessarios: 5, qntEmEstoque: 5);
+
+  brinde2.consultarPontosNecessarios();
+  cliente6.trocarPontosProBrinde(brinde2);
+  cliente6.ordenarBrindes();
+
+  print(brinde2.consultaQtdeEmEstoque());
 }
