@@ -41,7 +41,7 @@ class Cliente extends Pessoa {
   }
 
   void consultarTotalPontos(){
-    
+    //implementar
   }
 
   void comprarProduto(Produto produto, Revendedor revendedor) {
