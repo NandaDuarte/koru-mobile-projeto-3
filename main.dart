@@ -1,6 +1,6 @@
 // Importações dos arquivos que serão utilizados
 
-
+import 'classes/Brinde.dart';
 import 'classes/cliente.dart';
 import 'classes/enums.dart';
 import 'classes/pessoa.dart';
@@ -132,10 +132,9 @@ main() {
   cliente4.comprarProduto(bleu, func1);
   cliente4.comprarProduto(parfumLily, func1);
   cliente4.comprarProduto(verano, func1);
-    cliente4.comprarProduto(bleu,func1);
-  
-  cliente3.comprarProduto(verano, func1);
+  cliente4.comprarProduto(bleu, func1);
 
+  cliente3.comprarProduto(verano, func1);
 
   cliente3.verProdutosComprados();
   cliente4.verProdutosComprados();
@@ -146,7 +145,7 @@ main() {
 
   Cliente cliente6 = new Cliente("Adevalter", "123654789-11",
       DateTime.parse("1974-08-22"), Genero.masculino);
-  cliente6.adicionarDinheiro(1000.00);
+  cliente6.adicionarDinheiro(1500.00);
   cliente6.comprarProduto(verano, func1);
   cliente6.comprarProduto(bleu, func1);
   cliente6.comprarProduto(parfumLily, func1);
@@ -158,6 +157,17 @@ main() {
   //resumo de vendas revendedor:
   func1.verResumo();
   func2.verResumo();
+
+  Brinde perfume =
+      Brinde(nome: 'florata', pontosNecessarios: 20, qntEmEstoque: 10);
+  perfume.consultarPontosNecessarios();
+  perfume.realizarTroca();
+  perfume.realizarTroca();
+  print(perfume.consultaQtdeEmEstoque());
+
+  Produto bleus = Produto("Ultra Bleu Desodorante Colônia 100ml", 179.90, 0);
+
+  Cliente cliente7 = new Cliente("Adevalter", "123654789-11",
+      DateTime.parse("1974-08-22"), Genero.masculino);
+  cliente7.comprarProduto(bleus, func1);
 }
-
-
