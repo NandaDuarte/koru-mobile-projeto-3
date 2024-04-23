@@ -1,6 +1,5 @@
 // Importações dos arquivos que serão utilizados
-
-import 'classes/Brinde.dart';
+import 'classes/brinde.dart';
 import 'classes/cliente.dart';
 import 'classes/enums.dart';
 import 'classes/pessoa.dart';
@@ -54,6 +53,7 @@ main() {
   // Exemplo: produtoA.realizarVenda();
   // Saída esperada 1: Compra de um produto Colônia Floratta Flores Secretas 75ml realizada com sucesso!
   // Saída esperada 2: No momento não possuímos o produto Colônia Floratta Flores Secretas 75ml em estoque.
+
   parfumLily.realizarVenda();
   pularLinha();
   bleu.realizarVenda();
@@ -63,6 +63,7 @@ main() {
   verano.realizarVenda();
   // Teste o método verReceitaGerada algumas vezes...
   // Exemplo: print(produtoA.verReceitaGerada());
+
   print(
       "Produto ${parfumLily.nome} gerou receita de: ${parfumLily.verReceitaGerada().toStringAsFixed(2)}");
   pularLinha();
@@ -80,19 +81,19 @@ main() {
   // Declare aqui alguns objetos do tipo Pessoa...
   // Exemplo: Pessoa pessoaA = Pessoa('Maria', '12345678900', 1994);
   Pessoa pessoa1 = Pessoa(
-
       nome: "maria",
       cpf: "452464545452",
       dataDeNascimento: DateTime.parse("1980-04-12"),
-      generos: Genero.feminino);
+      generos: Genero.feminino,
+      humor: Humor.ansioso);
   pularLinha();
 
   Pessoa pessoa2 = Pessoa(
       nome: "jose",
       cpf: "121212121212",
       dataDeNascimento: DateTime.parse("2012-12-12"),
-      generos: Genero.masculino);
-
+      generos: Genero.masculino,
+      humor: Humor.feliz);
 
   /* Testes da classe Pessoa */
 
@@ -115,12 +116,14 @@ main() {
       nome: "rosa",
       cpf: "12121212121",
       dataDeNascimento: DateTime.parse("1990-10-20"),
-      generos: Genero.feminino);
+      generos: Genero.feminino,
+      humor: Humor.ansioso);
   Cliente cliente2 = Cliente(
       nome: "francisco",
       cpf: "34525254689",
       dataDeNascimento: DateTime.parse("1960-12-25"),
-      generos: Genero.masculino);
+      generos: Genero.masculino,
+      humor: Humor.ansioso);
 
   pularLinha();
   cliente1.falar("Quero ganhar o  Balm Hidratante Labial Nativa Spa Lilac");
@@ -132,19 +135,20 @@ main() {
       nome: 'João',
       cpf: '5362578725',
       dataDeNascimento: DateTime.parse('2024-03-21'),
-      generos: Genero.masculino);
+      generos: Genero.masculino,
+      humor: Humor.ansioso);
 
   cliente3.adicionarDinheiro(250.00);
   cliente3.adicionarDinheiro(50.00);
 
   /* ------------------------------------------ */
 
-
   Revendedor func1 = Revendedor(
       nome: "Marcelo",
       cpf: "12345179068",
       dataDeNascimento: DateTime.parse("1950-01-02"),
       generos: Genero.masculino,
+      humor: Humor.feliz,
       matricula: "101220");
   func1.falar(
       "Olá boa tarde, tudo bem? já conhece nossos produtos? temos varias fragrâncias.");
@@ -153,6 +157,7 @@ main() {
       cpf: "02131586547",
       dataDeNascimento: DateTime.parse("1980-05-15"),
       generos: Genero.feminino,
+      humor: Humor.feliz,
       matricula: "10420");
 
   func2.falar(
@@ -164,7 +169,8 @@ main() {
       nome: 'Vinicius',
       cpf: '3322578212',
       dataDeNascimento: DateTime.parse('2024-01-16'),
-      generos: Genero.masculino);
+      generos: Genero.masculino,
+      humor: Humor.feliz);
 
   cliente4.adicionarDinheiro(3500.00);
   cliente4.comprarProduto(verano, func1);
@@ -178,19 +184,20 @@ main() {
   cliente3.verProdutosComprados();
   cliente4.verProdutosComprados();
 
-
   Cliente cliente5 = new Cliente(
       nome: "Adevalter",
       cpf: "123654789-11",
       dataDeNascimento: DateTime.parse("1974-08-22"),
-      generos: Genero.masculino);
+      generos: Genero.masculino,
+      humor: Humor.ansioso);
   cliente5.verProdutosComprados();
 
   Cliente cliente6 = new Cliente(
       nome: "Adevalter",
       cpf: "123654789-11",
       dataDeNascimento: DateTime.parse("1974-08-22"),
-      generos: Genero.masculino);
+      generos: Genero.masculino,
+      humor: Humor.cansado);
   cliente6.adicionarDinheiro(1500.00);
 
   cliente6.comprarProduto(verano, func1);
@@ -205,7 +212,6 @@ main() {
   func1.verResumo();
   func2.verResumo();
 
-
   // termometro do humor desafio 2
   func1.termometroDoHumor(func1.humor);
   func2.termometroDoHumor(func2.humor);
@@ -215,16 +221,14 @@ main() {
   cliente4.termometroDoHumor(cliente4.humor);
   cliente5.termometroDoHumor(cliente5.humor);
   cliente6.termometroDoHumor(cliente6.humor);
-}
 
+  Brinde brinde2 =
+      new Brinde(nome: "perfume", pontosNecessarios: 10, qntEmEstoque: 5);
 
-
-  Brinde perfume =
-      Brinde(nome: 'florata', pontosNecessarios: 20, qntEmEstoque: 10);
-  perfume.consultarPontosNecessarios();
-  perfume.realizarTroca();
-  perfume.realizarTroca();
-  print(perfume.consultaQtdeEmEstoque());
+  brinde2.consultarPontosNecessarios();
+  brinde2.realizarTroca();
+  brinde2.realizarTroca();
+  print(brinde2.consultaQtdeEmEstoque());
 
   Produto bleus = Produto(
       nome: "Ultra Bleu Desodorante Colônia 100ml",
@@ -235,7 +239,8 @@ main() {
       nome: "Adevalter",
       cpf: "123654789-11",
       dataDeNascimento: DateTime.parse("1974-08-22"),
-      generos: Genero.masculino);
+      generos: Genero.masculino,
+      humor: Humor.triste);
 
   cliente7.adicionarDinheiro(500);
   cliente7.comprarProduto(bleus, func1);

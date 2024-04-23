@@ -6,7 +6,9 @@ class Brinde {
   Brinde(
       {required this.nome,
       required this.pontosNecessarios,
-      required this.qntEmEstoque});
+      required this.qntEmEstoque
+      }
+      );
 
   void consultarPontosNecessarios() {
     print(

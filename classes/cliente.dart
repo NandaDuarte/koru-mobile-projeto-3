@@ -9,12 +9,12 @@ class Cliente extends Pessoa {
   List<Brinde> brinds = [];
   int pontos = 0;
 
-
   Cliente(
       {required super.nome,
       required super.cpf,
       required super.dataDeNascimento,
       required super.generos,
+      required super.humor,
       this.dinheiro = 0});
 
   @override
@@ -41,7 +41,7 @@ class Cliente extends Pessoa {
         'Agora a pessoa ${super.nome} possui: ${this.dinheiro.toStringAsFixed(2)} reais.');
   }
 
-  void consultarTotalPontos(){
+  void consultarTotalPontos() {
     //implementar
   }
 
