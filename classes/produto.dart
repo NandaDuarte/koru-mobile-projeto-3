@@ -4,7 +4,8 @@ class Produto {
   int qtdVendida = 0;
   int qtdEmEstoque;
 
-  Produto(this.nome, this.valor, this.qtdEmEstoque);
+  Produto(
+      {required this.nome, required this.valor, required this.qtdEmEstoque});
 
   void realizarVenda() {
     if (this.qtdEmEstoque > 0) {
@@ -18,10 +19,6 @@ class Produto {
   }
 
   double verReceitaGerada() {
-  
     return this.valor * this.qtdVendida;
-    
   }
-
-  
 }

@@ -7,7 +7,11 @@ class Pessoa {
   int idade = 0;
   Genero generos;
 
-  Pessoa(this.nome, this.cpf, this.dataDeNascimento, this.generos) {
+  Pessoa(
+      {required this.nome,
+      required this.cpf,
+      required this.dataDeNascimento,
+      required this.generos}) {
     _calcularIdade();
   }
 
