@@ -1,7 +1,6 @@
 // Importações dos arquivos que serão utilizados
 
 import 'classes/Brinde.dart';
-
 import 'classes/cliente.dart';
 import 'classes/enums.dart';
 import 'classes/pessoa.dart';
