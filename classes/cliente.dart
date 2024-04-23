@@ -46,6 +46,7 @@ class Cliente extends Pessoa {
         revendedor.venderProduto(produto);
         this.dinheiro -= produto.valor;
         produtoComprados.add(produto);
+        this.pontos++;
         print(
             '${super.nome} comprou o produto ${produto.nome} por ${produto.valor.toStringAsFixed(2)} reais.');
       } catch (error) {
