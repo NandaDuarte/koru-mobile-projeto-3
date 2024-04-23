@@ -1,4 +1,4 @@
-import 'Brinde.dart';
+import 'brinde.dart';
 import 'pessoa.dart';
 import 'produto.dart';
 import 'revendedor.dart';
@@ -101,7 +101,7 @@ class Cliente extends Pessoa {
   void verResumo() => print(
       "O total gasto por ${super.nome} foi de ${_calcularTotalGasto().toStringAsFixed(2)} reais e a média de valor dos produtos comprados é ${_calcularMediaProdutosComprados().toStringAsFixed(2)} reais ");
 
-  void ordenarBrindes() {
+  void _ordenarBrindes() {
     brindes.sort((a, b) => a.nome.compareTo(b.nome));
     brindes.forEach((brinde) {
       print("${brinde.nome}");
@@ -120,5 +120,10 @@ class Cliente extends Pessoa {
     } on FormatException catch (e) {
       print(e.message);
     }
+  }
+
+  void verBrindes() {
+    print("Brindes recebidos por ${this.nome} :");
+    _ordenarBrindes();
   }
 }

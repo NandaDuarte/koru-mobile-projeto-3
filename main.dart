@@ -239,11 +239,15 @@ main() {
   cliente7.comprarProduto(bleus, func1);
   print(cliente7.dinheiro);
 
-  Brinde brinde2 = new Brinde(nome: "perfume", pontosNecessarios: 5, qntEmEstoque: 5);
-
+  Brinde brinde1 =
+      new Brinde(nome: "perfume", pontosNecessarios: 5, qntEmEstoque: 5);
+  Brinde brinde2 =
+      new Brinde(nome: "Batton", pontosNecessarios: 5, qntEmEstoque: 5);
   brinde2.consultarPontosNecessarios();
+  cliente6.trocarPontosProBrinde(brinde1);
   cliente6.trocarPontosProBrinde(brinde2);
-  cliente6.ordenarBrindes();
 
   print(brinde2.consultaQtdeEmEstoque());
+  cliente6.verBrindes();
+  
 }
