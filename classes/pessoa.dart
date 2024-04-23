@@ -8,7 +8,12 @@ class Pessoa {
   Genero generos;
   Humor humor;
 
-  Pessoa(this.nome, this.cpf, this.dataDeNascimento, this.generos, this.humor) {
+
+  Pessoa(
+      {required this.nome,
+      required this.cpf,
+      required this.dataDeNascimento,
+      required this.generos}) {
     _calcularIdade();
   }
 

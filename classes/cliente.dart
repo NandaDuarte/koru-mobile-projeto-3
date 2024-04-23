@@ -1,3 +1,4 @@
+import 'Brinde.dart';
 import 'pessoa.dart';
 import 'produto.dart';
 import 'revendedor.dart';
@@ -5,9 +6,16 @@ import 'revendedor.dart';
 class Cliente extends Pessoa {
   double dinheiro;
   List<Produto> produtoComprados = [];
+  List<Brinde> brinds = [];
+  int pontos = 0;
 
-  Cliente(super.nome, super.cpf, super.dataDeNascimento, super.generos,super.humor,
-      [this.dinheiro = 0.0]);
+
+  Cliente(
+      {required super.nome,
+      required super.cpf,
+      required super.dataDeNascimento,
+      required super.generos,
+      this.dinheiro = 0});
 
   @override
   void falar(String fala) {
@@ -33,12 +41,17 @@ class Cliente extends Pessoa {
         'Agora a pessoa ${super.nome} possui: ${this.dinheiro.toStringAsFixed(2)} reais.');
   }
 
+  void consultarTotalPontos(){
+    //implementar
+  }
+
   void comprarProduto(Produto produto, Revendedor revendedor) {
     if (dinheiro >= produto.valor) {
       try {
         revendedor.venderProduto(produto);
         this.dinheiro -= produto.valor;
         produtoComprados.add(produto);
+        this.pontos++;
         print(
             '${super.nome} comprou o produto ${produto.nome} por ${produto.valor.toStringAsFixed(2)} reais.');
       } catch (error) {
@@ -85,6 +98,7 @@ class Cliente extends Pessoa {
       return 0.0;
     }
   }
-    void verResumo() => print(
+
+  void verResumo() => print(
       "O total gasto por ${super.nome} foi de ${_calcularTotalGasto().toStringAsFixed(2)} reais e a média de valor dos produtos comprados é ${_calcularMediaProdutosComprados().toStringAsFixed(2)} reais ");
 }

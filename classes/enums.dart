@@ -4,6 +4,7 @@ enum Genero{
   outro;
 }
 
+
 enum Humor{
   feliz,
   triste,
@@ -11,3 +12,4 @@ enum Humor{
   cansado;
 
 }
+
