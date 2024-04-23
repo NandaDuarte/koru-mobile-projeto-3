@@ -169,5 +169,7 @@ main() {
 
   Cliente cliente7 = new Cliente("Adevalter", "123654789-11",
       DateTime.parse("1974-08-22"), Genero.masculino);
+  cliente7.adicionarDinheiro(500);
   cliente7.comprarProduto(bleus, func1);
+  print(cliente7.dinheiro);
 }

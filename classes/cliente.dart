@@ -1,3 +1,4 @@
+import 'Brinde.dart';
 import 'pessoa.dart';
 import 'produto.dart';
 import 'revendedor.dart';
@@ -5,6 +6,8 @@ import 'revendedor.dart';
 class Cliente extends Pessoa {
   double dinheiro;
   List<Produto> produtoComprados = [];
+  List<Brinde> brinds = [];
+  int pontos = 0;
 
   Cliente(super.nome, super.cpf, super.dataDeNascimento, super.generos,
       [this.dinheiro = 0.0]);

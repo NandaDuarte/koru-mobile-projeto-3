@@ -3,3 +3,4 @@ enum Genero{
   masculino,
   outro;
 }
+

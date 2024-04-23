@@ -17,6 +17,8 @@ class Brinde {
     if (this.qntEmEstoque > 0) {
       this.qntEmEstoque--;
       print("Troca realizada! Você ganhou um(a) ${this.nome}.");
+    }else{
+      throw("No momento não possuímos o produto ${this.nome} em estoque.");
     }
   }
 
