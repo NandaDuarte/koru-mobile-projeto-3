@@ -59,12 +59,8 @@ promoções”.*/
 
   double calcularMediaProdutosVendidos() {
     try {
-      if (this.produtosVendidos.isNotEmpty) {
-        return this.calcularTotalProdutosVendidos() /
-            this.produtosVendidos.length;
-      } else {
-        return 0.0;
-      }
+      return this.calcularTotalProdutosVendidos() /
+          this.produtosVendidos.length;
     } catch (e) {
       return 0.0;
     }
