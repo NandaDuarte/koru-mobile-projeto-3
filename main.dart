@@ -108,7 +108,7 @@ main() {
       nome: "Alice",
       cpf: "121212121212",
       dataDeNascimento: DateTime.parse("2012-12-12"),
-      generos: Genero.masculino,
+      generos: Genero.feminino,
       humor: Humor.triste);
   alice.adicionarDinheiro(200);
 
@@ -116,7 +116,7 @@ main() {
       nome: "Carmem",
       cpf: "121212121212",
       dataDeNascimento: DateTime.parse("2012-12-12"),
-      generos: Genero.masculino,
+      generos: Genero.feminino,
       humor: Humor.feliz);
 
   carmem.adicionarDinheiro(1800);
@@ -131,7 +131,7 @@ main() {
       nome: "Maria",
       cpf: "12345179068",
       dataDeNascimento: DateTime.parse("1950-01-02"),
-      generos: Genero.masculino,
+      generos: Genero.feminino,
       humor: Humor.feliz,
       matricula: "101220");
 
@@ -139,7 +139,7 @@ main() {
       nome: "Joaquina",
       cpf: "12345179068",
       dataDeNascimento: DateTime.parse("1950-01-02"),
-      generos: Genero.masculino,
+      generos: Genero.feminino,
       humor: Humor.feliz,
       matricula: "101220");
 
@@ -154,7 +154,7 @@ main() {
   Brinde brindeBalmMultifuncional = new Brinde(
       nome: "Balm Multifuncional Marrom Claro Gengibre 3,8g ",
       pontosNecessarios: 1,
-      qntEmEstoque: 3);
+      qntEmEstoque: 2);
 
   joana.falar(
       "oi,tudo bem, tem os seguintes  produtos: \n ${innamorata.nome}, \n${vanillaVibe.nome}, \n${romance.nome}, \n${nativaSpa.nome}, \n${floraCorporal.nome},\n ${refilNativaSpa.nome}?");
@@ -178,8 +178,7 @@ main() {
   joana.consultarTotalPontos();
   esperar(2);
   pularLinha();
-  joana.falar(
-      "quero trocar meus pontos pelo brinde ${brindeBalmMultifuncional.nome}");
+  joana.falar("quero trocar meus pontos ");
   esperar(2);
   joana.trocarPontosProBrinde(brindeBalmMultifuncional);
   esperar(2);
@@ -239,7 +238,7 @@ main() {
   pularLinha();
   esperar(2);
   alice.verResumo();
-
+  alice.consultarTotalPontos();
   pularLinha();
   joaquina.verResumo();
   joaquina.verResumo();
