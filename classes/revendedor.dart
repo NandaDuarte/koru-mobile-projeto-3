@@ -4,11 +4,16 @@ import 'produto.dart';
 
 class Revendedor extends Pessoa {
   String matricula;
-  List<Produto> produtosVendidos = [];
+  List<Produto> _produtosVendidos = [];
   double porcentagemLucro = 0.3;
 
-  Revendedor(super.nome, super.cpf, super.dataDeNascimento, super.generos,
-      this.matricula);
+  Revendedor(
+      {required super.nome,
+      required super.cpf,
+      required super.dataDeNascimento,
+      required super.generos,
+      required super.humor,
+      required this.matricula});
 
   @override
   void falar(String fala) {
@@ -34,7 +39,61 @@ class Revendedor extends Pessoa {
 promoções”.*/
 
   void venderProduto(Produto produto) {
-    produto.realizarVenda();
-    this.produtosVendidos.add(produto);
+    try {
+      produto.realizarVenda();
+      this._produtosVendidos.add(produto);
+    } catch (e) {
+      throw ("Saldo Insuficiente");
+    }
+  }
+
+  double _calcularTotalProdutosVendidos() {
+    double total = 0;
+
+    this._produtosVendidos.forEach((produto) {
+      total += produto.valor;
+    });
+
+    return total;
+  }
+
+  double _calcularMediaProdutosVendidos() {
+    try {
+      return this._calcularTotalProdutosVendidos() /
+          this._produtosVendidos.length;
+    } catch (e) {
+      return 0.0;
+    }
+  }
+
+  double calcularLucro() {
+    try {
+      if (_produtosVendidos.length > 0) {
+        double resultado = 0;
+        this._produtosVendidos.forEach((prd) {
+          resultado += prd.valor * this.porcentagemLucro;
+        });
+        return resultado;
+      } else {
+        throw Exception();
+      }
+    } catch (e) {
+      return 0;
+    }
+  }
+
+  void verResumo() {
+    double totalVendido =
+        _calcularTotalProdutosVendidos(); //calculo total vendido
+    double mediaAritmetica =
+        _calcularMediaProdutosVendidos(); // calculo media aritmetica
+    double lucroObtido = calcularLucro(); //calcular lucro obtido
+
+    //print resumo
+    print("Resumo de vendas do revendedor:${super.nome}");
+    print("O total vendido foi de ${totalVendido.toStringAsFixed(2)} reais");
+    print(
+        "A media aritmetica de valor dos produtos vendidos é de ${mediaAritmetica.toStringAsFixed(2)} reais");
+    print("o lucro recebido foi de ${lucroObtido.toStringAsFixed(2)} reais");
   }
 }
