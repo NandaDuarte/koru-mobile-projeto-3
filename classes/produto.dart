@@ -12,7 +12,7 @@ class Produto {
       this.qtdVendida++;
       this.qtdEmEstoque--;
 
-      print("Compra de um(a) produto ${this.nome} realizada com sucesso!");
+     // print("Compra de um(a) produto ${this.nome} realizada com sucesso!");
     } else {
       throw "No momento não possuímos o produto ${this.nome} em estoque";
     }

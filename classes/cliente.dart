@@ -26,7 +26,7 @@ class Cliente extends Pessoa {
     this.produtoComprados.sort((a, b) => b.nome.compareTo(a.nome));
   }
 
-  void exibirProdutosComValor() {
+  void _exibirProdutosComValor() {
     ordenarProdutosComprados();
     print("# Produtos comprados por ${super.nome}:");
     produtoComprados.forEach((produtos) {
@@ -73,7 +73,7 @@ class Cliente extends Pessoa {
   void verProdutosComprados() {
     try {
       if (produtoComprados.length > 0) {
-        exibirProdutosComValor();
+        _exibirProdutosComValor();
       } else {
         throw ("${super.nome} não comprou produto.");
       }

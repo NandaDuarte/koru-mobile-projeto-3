@@ -4,7 +4,7 @@ import 'produto.dart';
 
 class Revendedor extends Pessoa {
   String matricula;
-  List<Produto> produtosVendidos = [];
+  List<Produto> _produtosVendidos = [];
   double porcentagemLucro = 0.3;
 
   Revendedor(
@@ -41,26 +41,26 @@ promoções”.*/
   void venderProduto(Produto produto) {
     try {
       produto.realizarVenda();
-      this.produtosVendidos.add(produto);
+      this._produtosVendidos.add(produto);
     } catch (e) {
       throw ("Saldo Insuficiente");
     }
   }
 
-  double calcularTotalProdutosVendidos() {
+  double _calcularTotalProdutosVendidos() {
     double total = 0;
 
-    this.produtosVendidos.forEach((produto) {
+    this._produtosVendidos.forEach((produto) {
       total += produto.valor;
     });
 
     return total;
   }
 
-  double calcularMediaProdutosVendidos() {
+  double _calcularMediaProdutosVendidos() {
     try {
-      return this.calcularTotalProdutosVendidos() /
-          this.produtosVendidos.length;
+      return this._calcularTotalProdutosVendidos() /
+          this._produtosVendidos.length;
     } catch (e) {
       return 0.0;
     }
@@ -68,9 +68,9 @@ promoções”.*/
 
   double calcularLucro() {
     try {
-      if (produtosVendidos.length > 0) {
+      if (_produtosVendidos.length > 0) {
         double resultado = 0;
-        this.produtosVendidos.forEach((prd) {
+        this._produtosVendidos.forEach((prd) {
           resultado += prd.valor * this.porcentagemLucro;
         });
         return resultado;
@@ -84,9 +84,9 @@ promoções”.*/
 
   void verResumo() {
     double totalVendido =
-        calcularTotalProdutosVendidos(); //calculo total vendido
+        _calcularTotalProdutosVendidos(); //calculo total vendido
     double mediaAritmetica =
-        calcularMediaProdutosVendidos(); // calculo media aritmetica
+        _calcularMediaProdutosVendidos(); // calculo media aritmetica
     double lucroObtido = calcularLucro(); //calcular lucro obtido
 
     //print resumo
